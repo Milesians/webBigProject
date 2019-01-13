@@ -205,11 +205,13 @@
                         </div>
                         <div class="form-group">
                             <label for="newpwd">新密码</label>
-                            <input type="password" class="form-control" id="newpwd" name="newpwd" placeholder="新密码" required>
+                            <input type="password" class="form-control" id="newpwd" name="newpwd" placeholder="新密码"
+                                   required>
                         </div>
                         <div class="form-group">
                             <label for="newagain">确认新密码</label>
-                            <input type="password" class="form-control" id="newagain" name="newagain" placeholder="再次输入新密码" required>
+                            <input type="password" class="form-control" id="newagain" name="newagain"
+                                   placeholder="再次输入新密码" required>
                         </div>
                         <div class="modal-footer">
                             <input type="submit" class="btn btn-success" value="提交">

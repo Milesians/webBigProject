@@ -10,13 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
 
-/**
- * 功能描述:
- *
- * @Author ht
- * @Date 16/7/6.
- */
-
 @Controller
 public class SelectController {
 
@@ -39,36 +32,36 @@ public class SelectController {
 
         String msg = null;
         int rst = studentService.selectCource(sId, cId);
-        if (rst==0) {
+        if (rst == 0) {
             msg = "选课成功!";
-        } else if(rst==1){
+        } else if (rst == 1) {
             msg = "已经选过此课!";
-        } else if(rst==2){
-            msg="该课程已选满!";
-        }else{
-            msg="未知错误!";
+        } else if (rst == 2) {
+            msg = "该课程已选满!";
+        } else {
+            msg = "未知错误!";
         }
         req.getSession().setAttribute("msg", msg);
         return "detail";
     }
 
     @RequestMapping("/delCourse")
-    public synchronized String delClz(HttpServletRequest req){
+    public synchronized String delClz(HttpServletRequest req) {
         try {
             String stuId = (String) req.getSession().getAttribute("userId");
-            Integer clzId =Integer.parseInt(req.getParameter("id"));
+            Integer clzId = Integer.parseInt(req.getParameter("id"));
 
-            studyService.delCourse(stuId,clzId);
-            Course c=clzService.getClzById(clzId);
-            c.setSelected(c.getSelected()-1);
+            studyService.delCourse(stuId, clzId);
+            Course c = clzService.getClzById(clzId);
+            c.setSelected(c.getSelected() - 1);
 
             clzService.update(c);
 
-        }catch (NumberFormatException e){
+        } catch (NumberFormatException e) {
             e.printStackTrace();
             return "404";
         }
-        req.getSession().setAttribute("msg","删除成功!");
+        req.getSession().setAttribute("msg", "删除成功!");
         return "redirect:/showMyClasses";
     }
 

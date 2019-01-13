@@ -33,6 +33,6 @@ public class StudyService implements IStudyService {
 
     @Override
     public void delCourse(String stuId, Integer clzId) {
-        studyInfoDao.delete(stuId,clzId);
+        studyInfoDao.delete(stuId, clzId);
     }
 }

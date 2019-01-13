@@ -8,8 +8,8 @@
         <result column="credit" property="credit" jdbcType="INTEGER"/>
         <result column="belong" property="belong" jdbcType="VARCHAR"/>
         <result column="place" property="place" jdbcType="VARCHAR"/>
-        <result column="amount" property="amount" jdbcType="INTEGER" />
-        <result column="detail" property="detail" jdbcType="VARCHAR" />
+        <result column="amount" property="amount" jdbcType="INTEGER"/>
+        <result column="detail" property="detail" jdbcType="VARCHAR"/>
         <result column="selected" property="selected" jdbcType="INTEGER"/>
     </resultMap>
     <sql id="Base_Column_List">
@@ -17,39 +17,43 @@
     </sql>
 
     <select id="selectAll" resultMap="ClzMap">
-        SELECT <include refid="Base_Column_List" /> FROM course
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM course
     </select>
 
     <select id="selectById" resultMap="ClzMap" parameterType="java.lang.Integer">
-        SELECT <include refid="Base_Column_List" /> FROM course
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM course
         WHERE id=#{id,jdbcType=INTEGER}
     </select>
 
     <update id="update" parameterType="Clz">
         UPDATE course
         <set>
-            <if test="name != null" >
+            <if test="name != null">
                 name = #{name,jdbcType=VARCHAR},
             </if>
-            <if test="time!= null" >
+            <if test="time!= null">
                 time = #{time,jdbcType=VARCHAR},
             </if>
-            <if test="credit != null" >
+            <if test="credit != null">
                 credit = #{credit,jdbcType=INTEGER},
             </if>
-            <if test="belong != null" >
+            <if test="belong != null">
                 belong = #{belong,jdbcType=VARCHAR},
             </if>
-            <if test="place != null" >
+            <if test="place != null">
                 place = #{place,jdbcType=VARCHAR},
             </if>
-            <if test="amount != null" >
+            <if test="amount != null">
                 amount = #{amount,jdbcType=INTEGER},
             </if>
-            <if test="detail != null" >
+            <if test="detail != null">
                 detail = #{detail,jdbcType=VARCHAR},
             </if>
-            <if test="selected != null" >
+            <if test="selected != null">
                 selected = #{selected,jdbcType=VARCHAR},
             </if>
         </set>

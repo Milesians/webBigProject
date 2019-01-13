@@ -1,11 +1,5 @@
 package com.ht.entity;
 
-/**
- * 功能描述:
- *
- * @Author ht
- * @Date 16/7/7.
- */
 public class StudyInfo {
 
     //选课信息编号

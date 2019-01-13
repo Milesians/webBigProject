@@ -10,9 +10,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 
-/**
- * Created by ht on 16/6/22.
- */
 
 @Controller
 public class LoginController {
@@ -60,10 +57,10 @@ public class LoginController {
     }
 
     @RequestMapping("/adminLogin")
-    public String adminLogin(@RequestParam String username,@RequestParam String pwd,HttpServletRequest req){
+    public String adminLogin(@RequestParam String username, @RequestParam String pwd, HttpServletRequest req) {
         if (username.length() > 0 && username.length() < 20 && pwd.length() > 0 && pwd.length() < 20) {
-            if(adminService.login(username, pwd)){
-                req.getSession().setAttribute("id",username);
+            if (adminService.login(username, pwd)) {
+                req.getSession().setAttribute("id", username);
                 return "redirect:adminIndex";
             }
         }

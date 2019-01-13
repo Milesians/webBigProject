@@ -1,8 +1,6 @@
 package com.ht.entity;
 
-/**
- * Created by ht on 16/6/22.
- */
+
 public class Admin {
 
     //登录名

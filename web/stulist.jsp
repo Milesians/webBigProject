@@ -18,7 +18,7 @@
     List<StudyInfo> students = (List<StudyInfo>) session.getAttribute("students");
     Course c = (Course) session.getAttribute("course");
     String name = (String) session.getAttribute("user");
-    int num=1;
+    int num = 1;
 %>
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
@@ -74,7 +74,8 @@
 
     <ol class="breadcrumb" style="margin-top: 100px">
         <li><a href="/index">首页</a></li>
-        <li><a href="/showDetail?id=<%=c.getId()%>" onsubmit=""><%=c.getName()%></a></li>
+        <li><a href="/showDetail?id=<%=c.getId()%>" onsubmit=""><%=c.getName()%>
+        </a></li>
         <li class="active">已选学生列表</li>
     </ol>
 
@@ -89,13 +90,17 @@
         </thead>
         <tbody>
         <%
-            for(StudyInfo s:students){
+            for (StudyInfo s : students) {
         %>
         <tr>
-            <td><%=num++%></td>
-            <td><%=s.getS_name()%></td>
-            <td><%=s.getS_id()%></td>
-            <td><%=s.getS_major()%></td>
+            <td><%=num++%>
+            </td>
+            <td><%=s.getS_name()%>
+            </td>
+            <td><%=s.getS_id()%>
+            </td>
+            <td><%=s.getS_major()%>
+            </td>
         </tr>
         <%
             }
@@ -125,11 +130,13 @@
                         </div>
                         <div class="form-group">
                             <label for="newpwd">新密码</label>
-                            <input type="password" class="form-control" id="newpwd" name="newpwd" placeholder="新密码" required>
+                            <input type="password" class="form-control" id="newpwd" name="newpwd" placeholder="新密码"
+                                   required>
                         </div>
                         <div class="form-group">
                             <label for="newagain">确认新密码</label>
-                            <input type="password" class="form-control" id="newagain" name="newagain" placeholder="再次输入新密码" required>
+                            <input type="password" class="form-control" id="newagain" name="newagain"
+                                   placeholder="再次输入新密码" required>
                         </div>
                         <div class="modal-footer">
                             <input type="submit" class="btn btn-success" value="提交">

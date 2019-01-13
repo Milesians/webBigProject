@@ -16,12 +16,6 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.UnsupportedEncodingException;
 import java.util.List;
 
-/**
- * 功能描述:
- *
- * @Author ht
- * @Date 16/7/8.
- */
 
 @Controller
 public class AdminController {
@@ -219,20 +213,20 @@ public class AdminController {
             Student s = adminService.getStudentById(stuId);
             Course c = adminService.getCourseById(cId);
             if (s != null && c != null) {
-                if(c.getAmount()>c.getSelected()) {
+                if (c.getAmount() > c.getSelected()) {
                     int rst = studentService.selectCource(stuId, cId);
-                    if (rst==0) {
+                    if (rst == 0) {
                         msg = "添加成功";
-                    } else if(rst==1){
+                    } else if (rst == 1) {
                         msg = "已经选过此课!";
-                    } else if(rst==2){
-                        msg="该课程已选满!";
-                    }else{
-                        msg="未知错误!";
+                    } else if (rst == 2) {
+                        msg = "该课程已选满!";
+                    } else {
+                        msg = "未知错误!";
                     }
                 }
-            }else{
-                msg="添加失败";
+            } else {
+                msg = "添加失败";
             }
         } catch (Exception e) {
             msg = "添加失败";

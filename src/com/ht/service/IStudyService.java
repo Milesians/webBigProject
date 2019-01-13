@@ -10,6 +10,6 @@ public interface IStudyService {
 
     public List<StudyInfo> getAllStuByClzId(Integer clzId);
 
-    public void delCourse(String stuId,Integer clzId);
+    public void delCourse(String stuId, Integer clzId);
 
 }

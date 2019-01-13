@@ -29,14 +29,14 @@ public class StudentDao extends SqlSessionDaoSupport implements IStudentDao {
     }
 
     @Override
-    public void delete(@Param("id")String id) {
+    public void delete(@Param("id") String id) {
         this.getSqlSession().delete(SQL_NAMESPACE + ".delete", id);
     }
 
     @Override
-    public Student selectById(@Param("id")String id) {
-        Map<String,String> map=new HashMap<String, String>();
-        map.put("id",id);
+    public Student selectById(@Param("id") String id) {
+        Map<String, String> map = new HashMap<String, String>();
+        map.put("id", id);
         return this.getSqlSession().selectOne(SQL_NAMESPACE + ".selectById", map);
     }
 }

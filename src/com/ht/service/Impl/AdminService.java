@@ -94,7 +94,7 @@ public class AdminService implements IAdminService {
                                     if (year.charAt(i) > '9' || year.charAt(i) < '0')
                                         return false;
                                 }
-                                if(Integer.parseInt(year)>=1900) {
+                                if (Integer.parseInt(year) >= 1900) {
                                     adminDao.addStudent(student);
                                     return true;
                                 }
@@ -116,22 +116,22 @@ public class AdminService implements IAdminService {
 
     @Override
     public boolean addCourse(Course course) {
-        String name=course.getName();
-        if(name.length()>0&&name.length()<=100){
-            String time=course.getTime();
-            if(time.length()>0&&time.length()<=20){
+        String name = course.getName();
+        if (name.length() > 0 && name.length() <= 100) {
+            String time = course.getTime();
+            if (time.length() > 0 && time.length() <= 20) {
                 for (int i = 0; i < time.length(); i++) {
                     if (time.charAt(i) > '9' || time.charAt(i) < '0')
-                        if(time.charAt(i)!='('&&time.charAt(i)!=')'&&time.charAt(i)!='/'){
+                        if (time.charAt(i) != '(' && time.charAt(i) != ')' && time.charAt(i) != '/') {
                             return false;
                         }
                 }
-                String belong=course.getBelong();
-                if(belong.length()>0&&belong.length()<=100){
-                    String detail=course.getDetail();
-                    if(detail.length()>0&&detail.length()<=200){
-                        String place=course.getPlace();
-                        if(place.length()>0&&place.length()<=30){
+                String belong = course.getBelong();
+                if (belong.length() > 0 && belong.length() <= 100) {
+                    String detail = course.getDetail();
+                    if (detail.length() > 0 && detail.length() <= 200) {
+                        String place = course.getPlace();
+                        if (place.length() > 0 && place.length() <= 30) {
                             adminDao.addCourse(course);
                             return true;
                         }
@@ -155,8 +155,8 @@ public class AdminService implements IAdminService {
 
     @Override
     public boolean updateCourse(Course course) {
-        Integer id=course.getId();
-        if(id!=null||id>0) {
+        Integer id = course.getId();
+        if (id != null || id > 0) {
             String name = course.getName();
             if (name.length() > 0 && name.length() <= 100) {
                 String time = course.getTime();
@@ -173,7 +173,7 @@ public class AdminService implements IAdminService {
                         if (detail.length() > 0 && detail.length() <= 200) {
                             String place = course.getPlace();
                             if (place.length() > 0 && place.length() <= 30) {
-                                if(course.getAmount()>=course.getSelected()) {
+                                if (course.getAmount() >= course.getSelected()) {
                                     clzDao.update(course);
                                     return true;
                                 }

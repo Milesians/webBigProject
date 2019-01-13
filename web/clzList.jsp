@@ -15,7 +15,7 @@
 <body>
 <%
     String name = null;
-    int num=1;
+    int num = 1;
     List<Course> courses = (List<Course>) session.getAttribute("courses");
     if (session != null) {
         name = (String) session.getAttribute("user");
@@ -92,15 +92,21 @@
         </thead>
         <tbody>
         <%
-            for(Course c:courses){
+            for (Course c : courses) {
         %>
         <tr>
-            <td><%=num++%></td>
-            <td><%=c.getName()%></td>
-            <td><%=c.getBelong()%></td>
-            <td><%=c.getCredit()%></td>
-            <td><%=c.getTime()%></td>
-            <td><%=c.getSelected()%> / <%=c.getAmount()%></td>
+            <td><%=num++%>
+            </td>
+            <td><%=c.getName()%>
+            </td>
+            <td><%=c.getBelong()%>
+            </td>
+            <td><%=c.getCredit()%>
+            </td>
+            <td><%=c.getTime()%>
+            </td>
+            <td><%=c.getSelected()%> / <%=c.getAmount()%>
+            </td>
             <td><a class="btn btn-primary" href="/showDetail?id=<%=c.getId()%>">详情</a></td>
         </tr>
         <%
@@ -130,11 +136,13 @@
                         </div>
                         <div class="form-group">
                             <label for="newpwd">新密码</label>
-                            <input type="password" class="form-control" id="newpwd" name="newpwd" placeholder="新密码" required>
+                            <input type="password" class="form-control" id="newpwd" name="newpwd" placeholder="新密码"
+                                   required>
                         </div>
                         <div class="form-group">
                             <label for="newagain">确认新密码</label>
-                            <input type="password" class="form-control" id="newagain" name="newagain" placeholder="再次输入新密码" required>
+                            <input type="password" class="form-control" id="newagain" name="newagain"
+                                   placeholder="再次输入新密码" required>
                         </div>
                         <div class="modal-footer">
                             <input type="submit" class="btn btn-success" value="提交">

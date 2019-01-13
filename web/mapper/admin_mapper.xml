@@ -20,8 +20,8 @@
         <result column="credit" property="credit" jdbcType="INTEGER"/>
         <result column="belong" property="belong" jdbcType="VARCHAR"/>
         <result column="place" property="place" jdbcType="VARCHAR"/>
-        <result column="amount" property="amount" jdbcType="INTEGER" />
-        <result column="detail" property="detail" jdbcType="VARCHAR" />
+        <result column="amount" property="amount" jdbcType="INTEGER"/>
+        <result column="detail" property="detail" jdbcType="VARCHAR"/>
         <result column="selected" property="selected" jdbcType="INTEGER"/>
     </resultMap>
     <resultMap id="StudyMap" type="StudyInfo">
@@ -41,15 +41,15 @@
         SELECT * FROM `admin` WHERE id=#{id}
     </select>
 
-    <select id="selectAllStudents" resultMap="StudentMap" >
+    <select id="selectAllStudents" resultMap="StudentMap">
         SELECT * FROM student ORDER BY id
     </select>
 
-    <select id="selectAllCourses" resultMap="ClzMap" >
+    <select id="selectAllCourses" resultMap="ClzMap">
         SELECT * FROM course
     </select>
 
-    <select id="selectStuById" resultMap="StudentMap" parameterType="java.util.Map" >
+    <select id="selectStuById" resultMap="StudentMap" parameterType="java.util.Map">
         SELECT * FROM student WHERE id=${id};
     </select>
 
@@ -60,19 +60,19 @@
     <update id="updateStudent" parameterType="java.util.Map">
         UPDATE student
         <set>
-            <if test="s.name != null" >
+            <if test="s.name != null">
                 name = #{s.name,jdbcType=VARCHAR},
             </if>
-            <if test="s.pwd != null" >
+            <if test="s.pwd != null">
                 pwd = #{s.pwd,jdbcType=VARCHAR},
             </if>
-            <if test="s.sex != null" >
+            <if test="s.sex != null">
                 sex = #{s.sex,jdbcType=INTEGER},
             </if>
-            <if test="s.year != null" >
+            <if test="s.year != null">
                 year = #{s.year,jdbcType=VARCHAR},
             </if>
-            <if test="s.major != null" >
+            <if test="s.major != null">
                 major = #{s.major,jdbcType=VARCHAR},
             </if>
         </set>

@@ -2,12 +2,6 @@ package com.ht.dao;
 
 import com.ht.entity.Student;
 
-/**
- * 功能描述:
- *
- * @Author ht
- * @Date 16/7/5.
- */
 public interface IStudentDao {
 
     /**

@@ -6,13 +6,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * 功能描述:
- *
- * @Author wenli
- * @Date 16/7/5.
- */
-public class MainInterceptor implements HandlerInterceptor{
+public class MainInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception {
         return false;

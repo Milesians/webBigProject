@@ -1,8 +1,5 @@
 package com.ht.entity;
 
-/**
- * Created by ht on 16/6/22.
- */
 public class Course {
 
     //课程id
@@ -26,21 +23,24 @@ public class Course {
     //课程已选人数
     private Integer selected;
 
-    public Course(Integer id, String name,String time,Integer credit,
-                  String belong,String type,String place,Integer amount,String detail,Integer selected){
-        this.id=id;
-        this.name=name;
-        this.time=name;
-        this.credit=credit;
-        this.belong=belong;
-        this.type=type;
-        this.place=place;
-        this.amount=amount;
-        this.detail=detail;
-        this.selected=selected;
+    public Course(Integer id, String name, String time, Integer credit,
+                  String belong, String type, String place, Integer amount, String detail, Integer selected) {
+        this.id = id;
+        this.name = name;
+        this.time = name;
+        this.credit = credit;
+        this.belong = belong;
+        this.type = type;
+        this.place = place;
+        this.amount = amount;
+        this.detail = detail;
+        this.selected = selected;
     }
 
-    public Course(){};
+    public Course() {
+    }
+
+    ;
 
     public Integer getId() {
         return id;

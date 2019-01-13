@@ -1,8 +1,5 @@
 package com.ht.entity;
 
-/**
- * Created by ht on 16/6/22.
- */
 public class Student {
     //学生学号
     private String id;

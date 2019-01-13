@@ -4,12 +4,6 @@ import com.ht.entity.StudyInfo;
 
 import java.util.List;
 
-/**
- * 功能描述:
- *
- * @Author ht
- * @Date 16/7/7.
- */
 public interface IStudyInfoDao {
 
 
@@ -17,10 +11,10 @@ public interface IStudyInfoDao {
 
     public List<StudyInfo> selectByStuId(String stuId);
 
-    public StudyInfo check(String stuId,Integer clzId);
+    public StudyInfo check(String stuId, Integer clzId);
 
     public void insert(StudyInfo studyInfo);
 
-    public void delete(String stuId,Integer clzId);
+    public void delete(String stuId, Integer clzId);
 
 }

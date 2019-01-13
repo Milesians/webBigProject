@@ -41,7 +41,7 @@
                 <li><a href="/adminIndex">主页</a></li>
                 <li class="active"><a href="/studentManage">学生管理</a></li>
                 <li><a href="/courseManage">课程管理</a></li>
-                <li><a href="/chooseManage">选课管理</a> </li>
+                <li><a href="/chooseManage">选课管理</a></li>
                 <li><a href="/index">返回学生版主页</a></li>
             </ul>
         </div><!--/.nav-collapse -->
@@ -51,53 +51,57 @@
 
 <%
     Student s = null;
-    if(session!=null){
+    if (session != null) {
         s = (Student) session.getAttribute("student");
     }
 %>
 <div class="container">
-<form action="/changeStudent" method="post">
-    <h3>修改学生信息</h3>
-    <div class="form-group">
-        <label for="id">学生学号</label>
-        <input type="text" class="form-control" id="id" name="id" placeholder="学号" value="<%=s.getId()%>" readonly>
-    </div>
-    <div class="form-group">
-        <label for="name">姓名</label>
-        <input type="text" class="form-control" id="name" name="name" placeholder="姓名" value="<%=s.getName()%>" required>
-    </div>
-    <div class="form-group">
-        <label for="pwd">密码</label>
-        <input type="text" class="form-control" id="pwd" name="pwd" placeholder="密码" value="<%=s.getPwd()%>" required>
-    </div>
-    <div class="form-group">
-        <label for="boy">性别</label>&nbsp;&nbsp;&nbsp;&nbsp;
-        <%
-            if(s.getSex()=='女'){
-        %>
-        <input type="radio" name="sex" value="男" id="boy">男
-        <input type="radio" name="sex" value="女" id="girl" checked="true">女
-        <%
-            }else{
-        %>
-        <input type="radio" name="sex" value="男" id="boy" checked="true">男
-        <input type="radio" name="sex" value="女" id="girl">女
-        <%
-            }
-        %>
-    </div>
-    <div class="form-group">
-        <label for="major">学院专业</label>
-        <input type="text" class="form-control" id="major" name="major" placeholder="学院专业" value="<%=s.getMajor()%>" required>
-    </div>
+    <form action="/changeStudent" method="post">
+        <h3>修改学生信息</h3>
+        <div class="form-group">
+            <label for="id">学生学号</label>
+            <input type="text" class="form-control" id="id" name="id" placeholder="学号" value="<%=s.getId()%>" readonly>
+        </div>
+        <div class="form-group">
+            <label for="name">姓名</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="姓名" value="<%=s.getName()%>"
+                   required>
+        </div>
+        <div class="form-group">
+            <label for="pwd">密码</label>
+            <input type="text" class="form-control" id="pwd" name="pwd" placeholder="密码" value="<%=s.getPwd()%>"
+                   required>
+        </div>
+        <div class="form-group">
+            <label for="boy">性别</label>&nbsp;&nbsp;&nbsp;&nbsp;
+            <%
+                if (s.getSex() == '女') {
+            %>
+            <input type="radio" name="sex" value="男" id="boy">男
+            <input type="radio" name="sex" value="女" id="girl" checked="true">女
+            <%
+            } else {
+            %>
+            <input type="radio" name="sex" value="男" id="boy" checked="true">男
+            <input type="radio" name="sex" value="女" id="girl">女
+            <%
+                }
+            %>
+        </div>
+        <div class="form-group">
+            <label for="major">学院专业</label>
+            <input type="text" class="form-control" id="major" name="major" placeholder="学院专业" value="<%=s.getMajor()%>"
+                   required>
+        </div>
 
-    <div class="form-group">
-        <label for="year">学年</label>
-        <input type="text" class="form-control" id="year" name="year" placeholder="学年" value="<%=s.getYear()%>" required>
-    </div>
-    <button type="submit" class="btn btn-success">提交</button>
-    <a href="/studentManage" class="btn btn-default">返回</a>
-</form>
+        <div class="form-group">
+            <label for="year">学年</label>
+            <input type="text" class="form-control" id="year" name="year" placeholder="学年" value="<%=s.getYear()%>"
+                   required>
+        </div>
+        <button type="submit" class="btn btn-success">提交</button>
+        <a href="/studentManage" class="btn btn-default">返回</a>
+    </form>
 </div>
 </body>
 </html>

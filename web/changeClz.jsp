@@ -27,9 +27,9 @@
 <body>
 <%
     Course c = null;
-    if(session!=null){
+    if (session != null) {
         c = (Course) session.getAttribute("course");
-        session.setAttribute("id",c.getId());
+        session.setAttribute("id", c.getId());
     }
 %>
 <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -47,9 +47,9 @@
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li><a href="/adminIndex">主页</a></li>
-                <li ><a href="/studentManage">学生管理</a></li>
+                <li><a href="/studentManage">学生管理</a></li>
                 <li class="active"><a href="/courseManage">课程管理</a></li>
-                <li><a href="/chooseManage">选课管理</a> </li>
+                <li><a href="/chooseManage">选课管理</a></li>
                 <li><a href="/index">返回学生版主页</a></li>
             </ul>
         </div><!--/.nav-collapse -->
@@ -62,31 +62,38 @@
         <h3>新课程信息</h3>
         <div class="form-group">
             <label for="name">课程名</label>
-            <input type="text" class="form-control" id="name" name="name" placeholder="课程名" value="<%=c.getName()%>" required>
+            <input type="text" class="form-control" id="name" name="name" placeholder="课程名" value="<%=c.getName()%>"
+                   required>
         </div>
         <div class="form-group">
             <label for="time">开课学期</label>
-            <input type="text" class="form-control" id="time" name="time" placeholder="开课学期" value="<%=c.getTime()%>" required>
+            <input type="text" class="form-control" id="time" name="time" placeholder="开课学期" value="<%=c.getTime()%>"
+                   required>
         </div>
         <div class="form-group">
             <label for="credit">课程学分</label>
-            <input type="text" class="form-control" id="credit" name="credit" placeholder="课程学分" value="<%=c.getCredit()%>" required>
+            <input type="text" class="form-control" id="credit" name="credit" placeholder="课程学分"
+                   value="<%=c.getCredit()%>" required>
         </div>
         <div class="form-group">
             <label for="belong">所属社团</label>
-            <input type="text" class="form-control" id="belong" name="belong" placeholder="所属社团" value="<%=c.getBelong()%>" required>
+            <input type="text" class="form-control" id="belong" name="belong" placeholder="所属社团"
+                   value="<%=c.getBelong()%>" required>
         </div>
         <div class="form-group">
             <label for="place">开课地点</label>
-            <input type="text" class="form-control" id="place" name="place" placeholder="开课地点" value="<%=c.getPlace()%>" required>
+            <input type="text" class="form-control" id="place" name="place" placeholder="开课地点" value="<%=c.getPlace()%>"
+                   required>
         </div>
         <div class="form-group">
             <label for="amount">课程容量</label>
-            <input type="text" class="form-control" id="amount" name="amount" placeholder="课程容量" value="<%=c.getAmount()%>" required>
+            <input type="text" class="form-control" id="amount" name="amount" placeholder="课程容量"
+                   value="<%=c.getAmount()%>" required>
         </div>
         <div class="form-group">
             <label for="detail">课程描述</label>
-            <input type="text" class="form-control" id="detail" name="detail" placeholder="课程描述" value="<%=c.getDetail()%>" required>
+            <input type="text" class="form-control" id="detail" name="detail" placeholder="课程描述"
+                   value="<%=c.getDetail()%>" required>
         </div>
         <button type="submit" class="btn btn-success">提交</button>
         <a href="/courseManage" class="btn btn-default">返回</a>

@@ -72,8 +72,8 @@ public class DisplayController {
     @RequestMapping("/showMyClasses")
     public String showMyClzs(HttpServletRequest req) {
         String id = (String) req.getSession().getAttribute("userId");
-        List<StudyInfo> studyInfos=null;
-        if(id!=null){
+        List<StudyInfo> studyInfos = null;
+        if (id != null) {
             studyInfos = studyService.getAllClzByStuId(id);
         }
         req.getSession().setAttribute("clzs", studyInfos);
@@ -81,48 +81,48 @@ public class DisplayController {
     }
 
     @RequestMapping("/studentManage")
-    public String studentManage(HttpServletRequest req){
-        if(req.getSession().getAttribute("id")==null){
+    public String studentManage(HttpServletRequest req) {
+        if (req.getSession().getAttribute("id") == null) {
             return "adminLogin";
         }
-        List<Student> students=adminService.getAllStudents();
+        List<Student> students = adminService.getAllStudents();
         req.getSession().setAttribute("students", students);
         return "allStudents";
     }
 
     @RequestMapping("/courseManage")
-    public String courseManage(HttpServletRequest req){
-        if(req.getSession().getAttribute("id")==null){
+    public String courseManage(HttpServletRequest req) {
+        if (req.getSession().getAttribute("id") == null) {
             return "adminLogin";
         }
-        List<Course> courses=adminService.getAllCourses();
+        List<Course> courses = adminService.getAllCourses();
         req.getSession().setAttribute("courses", courses);
         return "allCourses";
     }
 
     @RequestMapping("/adminIndex")
-    public String showChart(HttpServletRequest req){
-        if(req.getSession().getAttribute("id")==null){
+    public String showChart(HttpServletRequest req) {
+        if (req.getSession().getAttribute("id") == null) {
             return "adminLogin";
         }
-        List<Course> courses=adminService.getAllCourses();
-        List<String> listX=new ArrayList<String>();
-        List<Integer> listSelected=new ArrayList<Integer>();
-        List<Integer> listLeft=new ArrayList<Integer>();
-        for(Course course:courses){
+        List<Course> courses = adminService.getAllCourses();
+        List<String> listX = new ArrayList<String>();
+        List<Integer> listSelected = new ArrayList<Integer>();
+        List<Integer> listLeft = new ArrayList<Integer>();
+        for (Course course : courses) {
             listX.add(course.getName());
             listSelected.add(course.getSelected());
-            listLeft.add(course.getAmount()-course.getSelected());
+            listLeft.add(course.getAmount() - course.getSelected());
         }
 
         req.getSession().setAttribute("listX", JSON.toJSONString(listX));
-        req.getSession().setAttribute("listSelected",JSON.toJSONString(listSelected));
-        req.getSession().setAttribute("listLeft",JSON.toJSONString(listLeft));
+        req.getSession().setAttribute("listSelected", JSON.toJSONString(listSelected));
+        req.getSession().setAttribute("listLeft", JSON.toJSONString(listLeft));
         return "admin";
     }
 
     @RequestMapping("/404")
-    public String pageNotFount(){
+    public String pageNotFount() {
         return "404";
     }
 

@@ -14,13 +14,14 @@
     </sql>
 
     <select id="selectById" resultMap="StudentMap" parameterType="java.util.Map" resultType="Student">
-        SELECT <include refid="Base_Column_List" />
+        SELECT
+        <include refid="Base_Column_List"/>
         FROM student WHERE id = ${id}
     </select>
 
     <update id="update" parameterType="Student">
         UPDATE student
-        <set >
+        <set>
             pwd=#{pwd,jdbcType=VARCHAR}
         </set>
         where id = #{id,jdbcType=INTEGER}

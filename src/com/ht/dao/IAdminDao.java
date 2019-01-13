@@ -7,12 +7,6 @@ import com.ht.entity.StudyInfo;
 
 import java.util.List;
 
-/**
- * 功能描述:
- *
- * @Author ht
- * @Date 16/7/8.
- */
 public interface IAdminDao {
 
     public Admin selectById(String id);

@@ -4,12 +4,7 @@ import com.ht.entity.Course;
 
 import java.util.List;
 
-/**
- * 功能描述:
- *
- * @Author wenli
- * @Date 16/7/6.
- */
+
 public interface IClzService {
 
     public List<Course> getAllClz();
